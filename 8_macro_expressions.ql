@@ -1,5 +1,5 @@
 import cpp 
 
 from MacroInvocation minvoc
-where minvoc.getMacroName() = "ntohs" or minvoc.getMacroName() = "ntohl" or minvoc.getMacroName() = "ntohll"
+where minvoc.getMacroName().regexpMatch("ntoh(s|ll?)")
 select "ntoh* expanded to - ", minvoc.getExpr()
